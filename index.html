@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title></title>
   <script src="WebGLEarthapi.js"></script>
@@ -13,12 +13,16 @@
 <body>
     <div id="earth_div"></div>
 
- 	<button type="button" class="btn">Click me!</button>
+ 	<!-- <button type="button" class="btn">Click me!</button>
 	<p class="text">Replace me!!</p>
-
+ -->
 	
 	<input type="range" min="0" max="50" value="0" step="5" onchange="showValue(this.value)" />
-	<p>The next <span id="range">0</span> launches.</p>
+	<p>These are the upcoming <span id="range">0</span> launches.</p>
+
+	<ol id="launchList">
+		
+	</ol>
 	
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
