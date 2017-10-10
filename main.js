@@ -135,14 +135,35 @@ $("#launchList").on("click", "li", function(e){
           let lat = singleLaunch.location.pads[0].latitude;
           let long = singleLaunch.location.pads[0].longitude;
 
+          // var before = null;
+          // requestAnimationFrame(function animate(now) {
+          //   var c = earth.getPosition();
+          //   var elapsed = before? now - before: 0;
+          //   before = now;
+          //   earth.setCenter([[singleLaunch.location.pads[0].latitude], [singleLaunch.location.pads[0].longitude]]);
+          //   if(stop){return};
+          //   requestAnimationFrame(animate);
+
+          function calcChange(future,past,times){  
+                 return (future-past)/times; 
+            }
+
+          let times = 50; 
+          var c = earth.getPosition();
+      
+          let val1 = calcChange(lat,c[0],times);
+          let val2 = calcChange(long,c[1],times);
+      
           var before = null;
-          requestAnimationFrame(function animate(now) {
+          var n = 0; 
+          requestAnimationFrame(function animate(now) { // animates the "focus" of the list into the earth
             var c = earth.getPosition();
-            var elapsed = before? now - before: 0;
-            before = now;
-            earth.setCenter([[singleLaunch.location.pads[0].latitude], [singleLaunch.location.pads[0].longitude]]);
-            if(stop){return};
+            earth.setCenter([c[0]+val1, c[1] + val2]);
+            n++;
+            if(n>times){return};
             requestAnimationFrame(animate);
+
+            
 
 
         });
