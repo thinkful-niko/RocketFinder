@@ -1,3 +1,4 @@
+let allData;
 
 function getData(num){
 	 $('.text').text('loading . . .');
@@ -8,7 +9,8 @@ function getData(num){
     success: function(data) {
       //$('.text').text(JSON.stringify(data));
       console.log(data);
-      displayMarkers(data); //run marker display function, which fetches latitude and longitude from JSON and creates a marker from that;
+      displayMarkers(data, true); //run marker display function, which fetches latitude and longitude from JSON and creates a marker from that;
+      allData = data;
       return data;
     },
     dataType: 'json',
@@ -43,6 +45,7 @@ $("input").on("change", (e) => { //once the slider (input) changes, it fetches "
 var options = {atmosphere: true, center: [0, 0], zoom: 0};
 var earth = new WE.map('earth_div', options);
 var markers = [];
+let stop = false;
 
 function initialize2() { // webGL initialize, will eventually get removed with the exeption of tilelayer and other lines.
 		
@@ -51,12 +54,26 @@ function initialize2() { // webGL initialize, will eventually get removed with t
            maxZoom: 5,
            attribution: 'NASA'
         }).addTo(earth);
+
+        var before = null;
+        requestAnimationFrame(function animate(now) {
+            var c = earth.getPosition();
+            var elapsed = before? now - before: 0;
+            before = now;
+            earth.setCenter([c[0], c[1] + 0.5*(elapsed/30)]);
+            if(stop){return};
+            requestAnimationFrame(animate);
+
+        });
+
       }
 
-function displayMarkers(data){ //gets data (JSON) from getData function and creates map markers & left sidebar list items
+function displayMarkers(data, first){ //gets data (JSON) from getData function and creates map markers & left sidebar list items
 
+
+        console.log(data);
         data.launches.forEach((item, i) => { // loops through JSON, items are the elements in the array, i is the # of the item inside the array
-        	console.log(item);
+        	
 
         	let longitude = item.location.pads[0].longitude; //fetches longitutde and latitude from JSON, pads are always [0];
 			    let latitude = item.location.pads[0].latitude;
@@ -65,16 +82,78 @@ function displayMarkers(data){ //gets data (JSON) from getData function and crea
 			    markers.push(marker); //pushes marker inside an array of markers[] so it can be removed with a change of the slider;
           marker.bindPopup("<p><b>Rocket name: </b><br>" + item.name+ "<br><hr><b>Launch date: <br></b>" + item.net , {maxWidth: 150, closeButton: true}).openPopup();// Popup description inside the marker, at the moment set to name only.
 
-          
-          $("#launchList").append("<li class='jsLaunch" + " " + "sideBarItem'" + ">" + item.location.name + "<br>" + item.net + "<br>" + item.name + "<br>" + "<a href='" + item.rocket.wikiURL + "' target='_blank'>" + "About Rocket" + "</a>" +"<br>" + "<a href='" + item.location.pads[0].mapURL + "' target='_blank'>" + "Directions" + "</a>" + "<br><hr>" + "</li>"); //This will eventually be the sidebar populated w/ more info
+          if(first){
+             $("#launchList").append("<li class='jsLaunch" + " " + "sideBarItem'" + ">" + item.location.name + "<br>" + item.net + "<br>" + item.name + "<br>" + "<a href='" + item.rocket.wikiURL + "' target='_blank'>" + "About Rocket" + "</a>" +"<br>" + "<a href='" + item.location.pads[0].mapURL + "' target='_blank'>" + "Map" + "</a>" + "<br><hr>" + "</li>"); //This will eventually be the sidebar populated w/ more info
           // I'm adding two classes in case I want to do live update of the list, "sideBarItem" is reserved for styling.
-
-          console.log(markers);
+          };
+          
         });
 
         window.markers = markers;
 }
 
+
+
+          // requestAnimationFrame(function animate(now) {
+          //   var c = earth.getPosition();
+          //   var elapsed = before? now - before: 0;
+          //   before = now;
+            
+          //   console.log(c);
+
+          //   // if({
+          //   //   earth.setCenter([c[0] + 0.5*(elapsed/30), c[1]]);
+          //   // };
+
+          //   if(Math.round(c[1]) != long || Math.round(c[0]) != lat) {
+          //     earth.setCenter([c[0] + 0.5*(elapsed/30), c[1] + 0.5*(elapsed/30)]);
+          //   };
+
+          //   requestAnimationFrame(animate);
+          // });
+
+
+
+$("#launchList").on("click", "li", function(e){
+          for (var i = 0; i < markers.length; i++) { //loops through array of markers and removes them from earth element;
+          
+          markers[i].removeFrom(earth);
+          
+          }
+
+          markers = [];
+
+          let singleLaunch = allData.launches[$(this).index()];
+
+          displayMarkers({'launches':[ singleLaunch ]}, false);
+
+          console.log(singleLaunch);
+
+          //earth.setCenter([[singleLaunch.location.pads[0].latitude], [singleLaunch.location.pads[0].longitude]]);
+
+          var before = null;
+          let lat = singleLaunch.location.pads[0].latitude;
+          let long = singleLaunch.location.pads[0].longitude;
+
+          var before = null;
+          requestAnimationFrame(function animate(now) {
+            var c = earth.getPosition();
+            var elapsed = before? now - before: 0;
+            before = now;
+            earth.setCenter([[singleLaunch.location.pads[0].latitude], [singleLaunch.location.pads[0].longitude]]);
+            if(stop){return};
+            requestAnimationFrame(animate);
+
+
+        });
+
+          stop = true;
+
+          $("#popUp").html("<p>" + singleLaunch.location.name + "<br>" + singleLaunch.net + "<br>" + singleLaunch.name + "<br>" + "<a href='" + singleLaunch.rocket.wikiURL + "' target='_blank'>" + "About Rocket" + "</a>" +"<br>" + "<a href='" + singleLaunch.location.pads[0].mapURL + "' target='_blank'>" + "Map" + "</a>" + "<br><hr>" + "</p>");
+
+});
+
+       
 /*TODO:
 1- Create pop-up (closeable overlay to the right of the globe) once list item is clicked, that popud will have more information including: Wiki, Gmaps link, Image of the rocket, Countdown for launch?
 2- Create Globe marker highlight/focus upon list "selection"
