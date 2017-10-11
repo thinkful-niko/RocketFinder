@@ -180,8 +180,8 @@ $("#launchList").on("click", "li", function(e){
 /*TODO:
 1- Create pop-up (closeable overlay to the right of the globe) once list item is clicked, that popud will have more information including: Wiki, Gmaps link, Image of the rocket, Countdown for launch?
 2- Globe animation focus resets North;
-3- Get particle.js background working;
-4- Styling:
+3- !!REMEMBER TO START A NEW BRANCH HERE!! Get particle.js background working;
+4- !! NEW BRANCH!! Styling:
   4.1- Header bar with logo + slider + aboutProject link that opens a popup(overlay);
   4.2- List items to left sidebar (Limited height, needs scroller);
   4.3- Pop-up overlay style;
