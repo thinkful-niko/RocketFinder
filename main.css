@@ -17,3 +17,8 @@
 body {
 	background: white;
 }
+
+/*This is the window that pops up when a li item is selectes*/
+.infoWindow{
+	border-left: 4px solid red;
+}
