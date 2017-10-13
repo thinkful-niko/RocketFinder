@@ -15,10 +15,28 @@
 
 */
 body {
-	background: white;
+	background: #040518;
+}
+
+#overlay {
+	position: relative;
+}
+
+#particles-js {
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:0; 
+}
+
+.sideBarItem {
+	background:rgba(238, 238, 238, 0.8);
 }
 
 /*This is the window that pops up when a li item is selectes*/
 .infoWindow{
 	border-left: 4px solid red;
+	background:rgba(238, 238, 238, 0.8);
 }
