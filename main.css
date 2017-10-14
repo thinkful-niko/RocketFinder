@@ -1,4 +1,7 @@
-/*Color Palette: 
+/*
+
+
+Color Palette: 
 	BG: #040518 (mid-night blue)
 
 	Menus: 
@@ -13,11 +16,30 @@
 
 	Font: Source Sans Pro;
 
+	GO TO DRIBBBLE FOR INSPIRATION
+	https://dribbble.com/shots/2267096-Nasa-gov-Article-Page
+
+	Style Idea:
+		-Faded black top navigation bar
+		-Rocket icon on slider
+		-Orange filler for slider input
+		-Rounded border for window, not too rounded so it doesn't look goofy (3px should be enough)
+		-List items are whiter with a bit of a shadow
+		-Hover and active stiles for li elements (orange active, hover makes it darker for contrast)
+		-Logo on top-left/ experiment on middle.
+		-Try to figure out where would be the best position for slider
+		-Favicon (how?)
+		-Monospace credits
+		-
+
 */
+
 body {
 	background: #040518;
+	font-family: 'Titillium Web', 'Helvetica Neue', 'Helvetica', sans-serif;
 }
 
+/*Particle JS Background ------------------------------------------------*/
 #overlay {
 	position: relative;
 }
@@ -31,12 +53,24 @@ body {
   z-index:0; 
 }
 
+/*Header + Logo + About + Lowered(idented) control input -----------------*/
+
+/*Side Bar List ----------------------------------------------------------*/
+#launchList{}
+
 .sideBarItem {
 	background:rgba(238, 238, 238, 0.8);
 }
 
-/*This is the window that pops up when a li item is selectes*/
+/*Info Popup Window ------------------------------------------------------*/
+#popUp{}
+
 .infoWindow{
 	border-left: 4px solid red;
-	background:rgba(238, 238, 238, 0.8);
+	background:rgba(238, 238, 238, 0.7);
 }
+
+/*Footer With Credits*/
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+/*Mobile Media Query*/

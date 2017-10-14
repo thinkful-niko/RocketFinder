@@ -8,7 +8,7 @@ function getData(num){
     url:`https://launchlibrary.net/1.2/launch/next/${num}`, // `${num} gets the num parameter which is the value from the slider input, (e) on line 27`
     success: function(data) {
       //$('.text').text(JSON.stringify(data));
-      //console.log(data);
+      console.log(data);
       displayMarkers(data, true); //run marker display function, which fetches latitude and longitude from JSON and creates a marker from that; The "true" parameter allows line 86 to run.
       allData = data;
       return data;
@@ -84,10 +84,20 @@ function displayMarkers(data, first){ //gets data (JSON) from getData function a
           marker.bindPopup("<p><b>Rocket name: </b><br>" + item.name+ "<br><hr><b>Launch date: <br></b>" + item.net , {maxWidth: 150, closeButton: true}).openPopup();// Popup description inside the marker, at the moment set to name only.
 
           if(first){ // if statement stops this part of function from running on the #launchlist li click function bellow
-             $("#launchList").append("<li class='jsLaunch" + " " + "sideBarItem'" + ">" + item.location.name + "<br>" + item.net + "<br>" + item.name + "<br>" + "<a href='" + item.rocket.wikiURL + "' target='_blank'>" + "About Rocket" + "</a>" +"<br>" + "<a href='" + item.location.pads[0].mapURL + "' target='_blank'>" + "Map" + "</a>" + "<br><hr>" + "</li>"); //This will eventually be the sidebar populated w/ more info
-          // I'm adding two classes in case I want to do live update of the list, "sideBarItem" is reserved for styling.
+             $("#launchList").append(
+                              "<li class='jsLaunch" + " " + "sideBarItem'" + ">" // I'm adding two classes in case I want to do live update of the list, "sideBarItem" is reserved for styling.
+                              + item.location.name + "<br>" 
+                              + item.net + "<br>" 
+                              + item.name + "<br>" 
+                              + "<a href='" + item.rocket.wikiURL + "' target='_blank'>" + "About Rocket" + "</a>" +"<br>" 
+                              + "<a href='" + item.location.pads[0].mapURL + "' target='_blank'>" + "Map" + "</a>" + "<br><hr>" 
+                              + "</li>" //End of Window
+
+
+
+
+             ); //This will eventually be the sidebar populated w/ more info
           };
-          
         });
 
         window.markers = markers;
@@ -181,12 +191,14 @@ $("#launchList").on("click", "li", function(e){
 1- Create pop-up (closeable overlay to the right of the globe) once list item is clicked, that popud will have more information including: Wiki, Gmaps link, Image of the rocket, Countdown for launch?
 2- Globe animation focus resets North;
 3- !!REMEMBER TO START A NEW BRANCH HERE!! Get particle.js background working;
-4- !! NEW BRANCH!! Styling:
+4- Styling:
   4.1- Header bar with logo + slider + aboutProject link that opens a popup(overlay);
   4.2- List items to left sidebar (Limited height, needs scroller);
-  4.3- Pop-up overlay style;
+  4.3- Pop-up overlay style (break up the js code so it is html like, for organization);
   4.4- Footer with contact info;
   4.5- Figure out the mobile UI/BG
+5- Google maps / no particles.js fallback for mobile.
+
 
 Bonus:
 1- Countdown per launch on popUp window;
