@@ -18,7 +18,7 @@ function getData(num){
 };
 
 
-
+ 
 // WebGL initialize
 $(document).ready(function(){
 
