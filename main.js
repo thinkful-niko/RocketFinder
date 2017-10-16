@@ -89,10 +89,9 @@ function displayMarkers(data, first){ //gets data (JSON) from getData function a
                               + item.name + "</b><br>" 
                               + item.net + "<br>" 
                               + item.location.name + "<br>" 
-                              + "<a href='" + item.rocket.wikiURL + "' target='_blank'>" + "About Rocket" + "</a>" +"<br>" 
-                              + "<a href='" + item.location.pads[0].mapURL + "' target='_blank'>" + "Map" + "</a>" + "<br>" 
-                              + "</li>" //End of Window
-
+                              // + "<a href='" + item.rocket.wikiURL + "' target='_blank'>" + "About Rocket" + "</a>" +"<br>" 
+                              // + "<a href='" + item.location.pads[0].mapURL + "' target='_blank'>" + "Map" + "</a>" + "<br>" 
+                              + "</li>" //End
 
 
 
