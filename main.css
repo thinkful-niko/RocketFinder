@@ -198,7 +198,8 @@ h2{
 	position: absolute;
 	top: 10%;
     right: 6%;
-    min-width: 450px;
+    min-width: 250px;
+    width: 20%;
     max-width: 450px;
     min-height: 400px;
     height: auto;
@@ -223,6 +224,8 @@ footer {
 footer p {
     color: white;
     font-size: 0.7em;
+    margin-top: 0.3%;
+
 }
 
 footer a {
