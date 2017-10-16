@@ -49,7 +49,7 @@ var markers = [];
 let stop = false;
 
 function initialize2() { // webGL Adds Satellite Tile + Animation 
-    
+    console.log("initialize earth");
         WE.tileLayer('https://tileserver.maptiler.com/nasa/{z}/{x}/{y}.jpg', {
            minZoom: 0,
            maxZoom: 5,
@@ -67,7 +67,7 @@ function initialize2() { // webGL Adds Satellite Tile + Animation
 
         });
 
-      }
+}
 
 function displayMarkers(data, first){ //gets data (JSON) from getData function and creates map markers & left sidebar list items. "first" parameter is a boolean that will either allow or stop #launchlist event from appending more li to html
 

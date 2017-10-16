@@ -10,7 +10,7 @@ particlesJS.load('particles-js', 'particles.json', function() {
 */
 
 /* Otherwise just put the config content (json): */
-
+setTimeout(function(){
 particlesJS('particles-js',
   
   {
@@ -125,3 +125,4 @@ particlesJS('particles-js',
 }
 
 );
+} ,3000);
