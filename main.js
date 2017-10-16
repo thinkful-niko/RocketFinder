@@ -190,10 +190,11 @@ $("#launchList").on("click", "li", function(e){
             + "<a href='" + singleLaunch.rocket.wikiURL + "' target='_blank'>" + "About Rocket" + "</a>" +"<br>" 
             + "<a href='" + singleLaunch.location.pads[0].mapURL + "' target='_blank'>" + "Map" + "</a>" + "<br>"
             + streamURL
-            + "</p> </div>");
+            + "</p> <span id='closeWindow'>X</span></div>");
 
           $("#popUp div").addClass("infoWindow");
           //This will populate the popup once the list item is selected.
+          $("#closeWindow"); //X closes window
 });
 
        

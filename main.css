@@ -135,6 +135,9 @@ h2{
     bottom: 38px;
 }
 
+.controller input:hover{
+    cursor: pointer;
+}
 
 
 
@@ -185,6 +188,7 @@ h2{
  	border-left: 20px solid #dd4e0a;
  	left: 100px;
  	background: #afafaf;
+    cursor: pointer;
  }
 
 
@@ -206,11 +210,27 @@ h2{
     max-height: 600px;
     border-radius: 3px;
     padding: 5px;
+    padding-top: 20px;
 }
 
-.infoToggleVis{} /*Add the "X" on Javascript code to close the info window*/
+#closeWindow{
+    color: #dd4e0a;
+    font-weight: 900;
+    position: absolute;
+    bottom: 93%;
+    left: 94%;
+    font-size: 22px;
 
-/*Footer With Credits*/
+    transition: color 0.3s;
+} 
+
+#closeWindow:hover{
+    cursor: pointer;
+    color: #660000;
+
+}
+
+/*Footer With Credits ------------------------------------------------*/
 footer {
     position: absolute;
     background: black;
