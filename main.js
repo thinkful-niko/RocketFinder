@@ -81,16 +81,16 @@ function displayMarkers(data, first){ //gets data (JSON) from getData function a
 
           var marker = WE.marker([latitude, longitude]).addTo(earth); // creates marker variable for earthGL
           markers.push(marker); //pushes marker inside an array of markers[] so it can be removed with a change of the slider;
-          marker.bindPopup("<p><b>Rocket name: </b><br>" + item.name+ "<br><hr><b>Launch date: <br></b>" + item.net , {maxWidth: 150, closeButton: true}).openPopup();// Popup description inside the marker, at the moment set to name only.
+          marker.bindPopup("<p><b>Rocket name: </b><br>" + item.name+ "</p>", {maxWidth: 150, closeButton: true}).openPopup();// Popup description inside the marker, at the moment set to name only.
 
           if(first){ // if statement stops this part of function from running on the #launchlist li click function bellow
              $("#launchList").append(
-                              "<li class='jsLaunch" + " " + "sideBarItem'" + ">" // I'm adding two classes in case I want to do live update of the list, "sideBarItem" is reserved for styling.
-                              + item.location.name + "<br>" 
+                              "<li class='jsLaunch" + " " + "sideBarItem'" + "><b>" // I'm adding two classes in case I want to do live update of the list, "sideBarItem" is reserved for styling.
+                              + item.name + "</b><br>" 
                               + item.net + "<br>" 
-                              + item.name + "<br>" 
+                              + item.location.name + "<br>" 
                               + "<a href='" + item.rocket.wikiURL + "' target='_blank'>" + "About Rocket" + "</a>" +"<br>" 
-                              + "<a href='" + item.location.pads[0].mapURL + "' target='_blank'>" + "Map" + "</a>" + "<br><hr>" 
+                              + "<a href='" + item.location.pads[0].mapURL + "' target='_blank'>" + "Map" + "</a>" + "<br>" 
                               + "</li>" //End of Window
 
 
@@ -181,7 +181,14 @@ $("#launchList").on("click", "li", function(e){
 
           stop = true; //Allows user to move earth with its mouse
 
-          $("#popUp").html("<div><p>" + singleLaunch.location.name + "<br>" + singleLaunch.net + "<br>" + singleLaunch.name + "<br>" + "<a href='" + singleLaunch.rocket.wikiURL + "' target='_blank'>" + "About Rocket" + "</a>" +"<br>" + "<a href='" + singleLaunch.location.pads[0].mapURL + "' target='_blank'>" + "Map" + "</a>" + "<br>" + "</p></div>");
+          $("#popUp").html( //Info Window
+            "<div><p>" + singleLaunch.location.name + "<br>" 
+            + singleLaunch.net + "<br>" 
+            + singleLaunch.name + "<br>" 
+            + "<a href='" + singleLaunch.rocket.wikiURL + "' target='_blank'>" + "About Rocket" + "</a>" +"<br>" 
+            + "<a href='" + singleLaunch.location.pads[0].mapURL + "' target='_blank'>" + "Map" + "</a>" + "<br>" 
+            + "</p></div>");
+
           $("#popUp div").addClass("infoWindow");
           //This will populate the popup once the list item is selected.
 });

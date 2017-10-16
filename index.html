@@ -18,30 +18,44 @@
 
 </head>
 <body>
-	<div id="particles-js"></div>
+<div id="particles-js"></div>
 <!-- For particles.js to become a background -->
 <div id="overlay">
+	
+	<div class="topBar">
+		<div class="logoBG">
+			<img src="Logo/4.png" alt="Logo">
+		</div>
+	</div>
 
-    <div id="earth_div"></div>
+    <div id="earth_div" class="moveEarth"></div>
     
 
  	<!-- <button type="button" class="btn">Click me!</button>
 	<p class="text">Replace me!!</p>
  -->
-	
-	<input type="range" min="0" max="50" value="0" step="5" onchange="showValue(this.value)" />
-	<p>These are the upcoming <span id="range">0</span> launches.</p>
+	<main role="main">
 
-	<ol id="launchList">
-		<!-- Populated in JS -->
-	</ol>
+		<div class="controller">
+			<h2>Find The Next:</h2>
+			<input class="sliderCondtrol" type="range" min="0" max="50" value="0" step="5" onchange="showValue(this.value)" />
+			<p><span id="range">0</span> Launches</p>
+		</div>
 
-	<div id="popUp">
-		<!-- Populated in JS -->
-	</div>
+		<div class="listBG"></div>
+
+		<ol id="launchList" class="leftSideBar">
+			<!-- Populated in JS -->
+		</ol>
+
+		<div id="popUp">
+			<!-- Populated in JS -->
+		</div>
+	</main>
 
 </div>
-<footer>
+
+<footer role="content-info">
 	<p>Designed and Coded by <a href="https://github.com/DevTrader" target="_blank">Nicolas Kao Sartor</a></p>
 </footer>
 	

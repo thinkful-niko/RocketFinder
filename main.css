@@ -1,20 +1,16 @@
-/*
 
+/*
 
 Color Palette: 
 	BG: #040518 (mid-night blue)
 
 	Menus: 
 		Main: #EEEEEE (Solid);
-		SideBar (Transparent): rgba(238, 238, 238, 0.8);
-		Accent: #3A3A3A (Solid);
-		Accent (Transparent): rgba(58, 58, 58, 0.8);
-
-	Buttons: White;
-
-	Content: black;
-
-	Font: Source Sans Pro;
+		!Orange highlight: #dd4e0a;
+		White gradient: #fbfbfb(white) #dadada(light gray);
+		Blue slider bg: #060b62;
+		Header logo bg: #090b34;
+		Footer bg: #010108;
 
 	GO TO DRIBBBLE FOR INSPIRATION
 	https://dribbble.com/shots/2267096-Nasa-gov-Article-Page
@@ -25,18 +21,22 @@ Color Palette:
 		-Orange filler for slider input
 		-Rounded border for window, not too rounded so it doesn't look goofy (3px should be enough)
 		-List items are whiter with a bit of a shadow
-		-Hover and active stiles for li elements (orange active, hover makes it darker for contrast)
+		-Hover and active stiles for li elements (orange active, hover makes it darker for contrast, also a small displacement to the right(width size) with the orange left border)
 		-Logo on top-left/ experiment on middle.
 		-Try to figure out where would be the best position for slider
 		-Favicon (how?)
 		-Monospace credits.
-		
+
+	Resources:
+		scrollbar styling: https://codepen.io/devstreak/pen/dMYgeO	
 
 */
 
 body {
 	background: #040518;
 	font-family: 'Titillium Web', 'Helvetica Neue', 'Helvetica', sans-serif;
+	max-height: 100%;
+	overflow-y: hidden;
 }
 
 /*Particle JS Background ------------------------------------------------*/
@@ -53,14 +53,129 @@ body {
   z-index:0; 
 }
 
+/*Move Earth -------------------------------------------------------------*/
+
+.moveEarth {
+	top: -150px;
+}
+
 /*Header + Logo + About + Lowered(idented) control input -----------------*/
+.topBar{
+	height: 200px;
+    background: -webkit-linear-gradient(black, rgba(255,0,0,0)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(black, rgba(255,0,0,0)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(black, rgba(255,0,0,0)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(black, rgba(255,0,0,0)); /* Standard syntax (must be last)*/
+
+    margin: -8px -8px;
+}
+
+.logoBG{
+	background: #030416;
+	display: inline-block;
+    padding: 10px;
+}
+
+.logoBG img{
+    margin: 10px 0px;
+    padding: 15px 35px;
+    height: 80px;
+    position: relative;
+
+}
+
+.controller{
+	position: absolute;
+    z-index: 2;
+    top: 150px;
+    background: white;/*#060b62*/
+    margin: -10px -8px;
+    display: inline-block;
+    padding-right: 170px;
+    height: 50px;
+    width: 250px;
+    border-left: 5px solid #dd4e0a;
+}
+
+.controller p ,.controller h2 {
+	color: black;
+	text-align: center;
+	font-size: 18px;
+}
+
+.controller p{
+
+    bottom: 56px !important;
+    position: relative;
+    float: right;
+    display: inline-block;
+    left: 110px !important;
+}
+
+.controller h2{
+	position: relative;
+    bottom: 15px;
+    left: 30%;
+}
+
+.controller p, .controller input{
+	position: relative;
+    left: 50%;
+    bottom: 35px;
+}
+
+
+
 
 /*Side Bar List ----------------------------------------------------------*/
-#launchList{}
 
 .sideBarItem {
-	background:rgba(238, 238, 238, 0.8);
+	background:rgba(238, 238, 238, 1);
+	margin-left: -10px;
+    padding-left: 20px;
+    max-width: 410px;
+    text-align: left;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    min-height: 150px;
+
+    transition: border-left 0.2s, background 0.5s;
 }
+
+
+.leftSideBar{
+	display: inline-block;
+    position: absolute;
+    top: 174px;
+    max-height: 760px;
+    overflow: auto;
+    left: -5px;
+    overflow-x: hidden;
+    direction:rtl;
+}
+ .listBG{
+    display: inline-block;
+    position: absolute;
+    top: 190px;
+    height: 100%;
+    width: 420px;
+    background: #090b34;
+    bottom: 100px;
+    margin-left: -20px;
+ }
+
+ ol{
+ 	list-style-type: none;
+ 	max-width: 410px;
+ }
+
+ li:hover {
+ 	border-left: 20px solid #dd4e0a;
+ 	left: 100px;
+ 	background: #afafaf;
+ }
+
+
 
 /*Info Popup Window ------------------------------------------------------*/
 #popUp{}
@@ -68,9 +183,37 @@ body {
 .infoWindow{
 	border-left: 4px solid red;
 	background:rgba(238, 238, 238, 0.7);
+	position: absolute;
+	top: 200px;
+    right: 200px;
 }
 
 /*Footer With Credits*/
 
+
+/*Scrollbar*/
+.leftSideBar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+	direction:rtl;
+}
+
+.leftSideBar::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+	direction:rtl;
+}
+
+.leftSideBar::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #060b62;
+	direction:rtl;
+}
+
 /*---------------------------------------------------------------------------------------------------------------------------*/
-/*Mobile Media Query*/
+/*Mobile Media Query
