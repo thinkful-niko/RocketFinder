@@ -181,13 +181,17 @@ $("#launchList").on("click", "li", function(e){
 
           stop = true; //Allows user to move earth with its mouse
 
+          let streamURL;
+          if (singleLaunch.vidURLs.length == 0) {streamURL = "No Stream/ Stream TBA"} else {streamURL = "<a href='" + singleLaunch.vidURLs[0] + "' target='_blank'>" + "Live Stream Schedule" + "</a>" + "<br>"};
+
           $("#popUp").html( //Info Window
-            "<div><p>" + singleLaunch.location.name + "<br>" 
+            "<div class='infoContent'> <h2>" + singleLaunch.name + "</h2><p>" 
             + singleLaunch.net + "<br>" 
-            + singleLaunch.name + "<br>" 
+            + singleLaunch.location.name + "<br>" 
             + "<a href='" + singleLaunch.rocket.wikiURL + "' target='_blank'>" + "About Rocket" + "</a>" +"<br>" 
-            + "<a href='" + singleLaunch.location.pads[0].mapURL + "' target='_blank'>" + "Map" + "</a>" + "<br>" 
-            + "</p></div>");
+            + "<a href='" + singleLaunch.location.pads[0].mapURL + "' target='_blank'>" + "Map" + "</a>" + "<br>"
+            + streamURL
+            + "</p> </div>");
 
           $("#popUp div").addClass("infoWindow");
           //This will populate the popup once the list item is selected.
