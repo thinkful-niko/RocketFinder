@@ -81,7 +81,7 @@ function displayMarkers(data, first){ //gets data (JSON) from getData function a
 
           var marker = WE.marker([latitude, longitude]).addTo(earth); // creates marker variable for earthGL
           markers.push(marker); //pushes marker inside an array of markers[] so it can be removed with a change of the slider;
-          marker.bindPopup("<p><b>Rocket name: </b><br>" + item.name+ "</p>", {maxWidth: 150, closeButton: true}).openPopup();// Popup description inside the marker, at the moment set to name only.
+          marker.bindPopup("<p><b>Rocket name | Payload: </b><br>" + item.name+ "</p>", {maxWidth: 150, closeButton: true}).openPopup();// Popup description inside the marker, at the moment set to name only.
 
           if(first){ // if statement stops this part of function from running on the #launchlist li click function bellow
              $("#launchList").append(
