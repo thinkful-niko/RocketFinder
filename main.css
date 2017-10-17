@@ -154,7 +154,7 @@ h2{
     padding-bottom: 20px;
 /*    min-height: 100px;*/
 
-    transition: border-left 0.2s, background 0.5s;
+    transition: border-left 0.2s, background 0.5s, left 0.5s ;
 }
 
 
@@ -189,6 +189,8 @@ h2{
  	left: 100px;
  	background: #afafaf;
     cursor: pointer;
+    position: relative;
+    left: 20px;
  }
 
 
@@ -250,6 +252,13 @@ footer p {
 
 footer a {
     color:#dba257;
+    text-decoration: none;
+
+    transition: color 0.5s;
+}
+
+footer a:hover{
+    color: green;
 }
 /*Elements styling ---------------------------------------------------------*/
 
