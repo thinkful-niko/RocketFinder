@@ -83,9 +83,9 @@ function initialize2() { // webGL Adds Satellite Tile + Animation
     var before = null;
     requestAnimationFrame(function animate(now) {
         var c = earth.getPosition();
-        var elapsed = before ? now - before : 0; // ??NO IDEA??
+        var elapsed = before ? now - before : 0; 
         before = now;
-        earth.setCenter([c[0], c[1] + 0.6 * (elapsed / 30)]); // Setting center to be current lat and long 0.5 is the velocity
+        earth.setCenter([c[0], c[1] + 0.6 * (elapsed / 60)]); // Setting center to be current lat and long 0.5 is the velocity
         if (stop) {
             return
         };
@@ -107,10 +107,15 @@ function displayMarkers(data, first) { //gets data (JSON) from getData function 
 
         var marker = WE.marker([latitude, longitude]).addTo(earth); // creates marker variable for earthGL
         markers.push(marker); //pushes marker inside an array of markers[] so it can be removed with a change of the slider;
-        marker.bindPopup("<p><b>Rocket name | Payload: </b><br>" + item.name + "</p>", {
+        marker.bindPopup("<div class='blob'><p><b>Rocket name | Payload: </b><br>" + item.name + "</p></div>", {
             maxWidth: 150,
             closeButton: true
-        }).openPopup(); // Popup description inside the marker, at the moment set to name only.
+        }); // Popup description inside the marker, at the moment set to name only.
+
+        if (data.launches.length == 1){
+          marker.openPopup();
+        }
+
 
         if (first) { // if statement stops this part of function from running on the #launchlist li click function bellow
             $("#launchList").append(
@@ -134,6 +139,8 @@ function displayMarkers(data, first) { //gets data (JSON) from getData function 
 }
 
 
+
+
 $("#launchList").on("click", "li", function(e) {
     for (var i = 0; i < markers.length; i++) { //loops through array of markers and removes them from earth element;
 
@@ -141,6 +148,8 @@ $("#launchList").on("click", "li", function(e) {
 
     }
     // $('input#navigation').attr('checked', false); //This closes navigation when a li element is clicked
+    
+
     markers = []; // set markers array to empty
 
 
@@ -223,7 +232,7 @@ $("#launchList").on("click", "li", function(e) {
             var c = earth.getPosition();
             var elapsed = before ? now - before : 0;
             before = now;
-            earth.setCenter([c[0], c[1] + 0.6 * (elapsed / 30)]);
+            earth.setCenter([c[0], c[1] + 0.6 * (elapsed / 60)]);
             if (stop) {
                 return
             };
@@ -257,18 +266,12 @@ $("#launchList").on("click", "li", function(e) {
 
 
 
-
-
 Bonus:
 1- Countdown per launch on popUp window;
 */
 
-    // OLD "snappy" 3d earth focus
-    // var before = null; 
-    // requestAnimationFrame(function animate(now) {
-    //   var c = earth.getPosition();
-    //   var elapsed = before? now - before: 0;
-    //   before = now;
-    //   earth.setCenter([[singleLaunch.location.pads[0].latitude], [singleLaunch.location.pads[0].longitude]]);
-    //   if(stop){return};
-    //   requestAnimationFrame(animate);
+
+
+// Marker Style markers[0].element.style.backgroundColor
+
+

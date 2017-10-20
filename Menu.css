@@ -30,7 +30,14 @@ p{
     background: url(background1.jpg) no-repeat fixed center; 
     background-size: auto;
     position: relative;
-    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    resize: both;
+
+    height: calc(100vh - 136px);
+
 
 }
 section{
@@ -42,16 +49,16 @@ section{
 
 }
 nav{
-    position:absolute;
-    top:0;
-    left:0px;
-    width:400px; /*Control Side Nav Width*/
-    height:100%;
-    margin:0 0 0 -400px;/*Control Side Nav Width Before Animation*/
-    -moz-transition:all 200ms ease-in;
-    -webkit-transition:all 200ms ease-in;
-    -o-transition:all 200ms ease-in;
-    transition:all 200ms ease-in;
+    position: relative;
+    top: 0;
+    left: 0px;
+    width: 400px;
+    height: 100%;
+    margin: 0 0 0 -400px;
+    -moz-transition: all 200ms ease-in;
+    -webkit-transition: all 200ms ease-in;
+    -o-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
     overflow: auto;
 }
 nav ul{
@@ -510,9 +517,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 /*Top Bar + Logo + Logo BG --------------------------------------------------*/
-.topBar{
-  margin-bottom: -30px;
-}
 .logoBG>img{    
   margin: 10px 0px;
   padding: 15px 35px;
@@ -552,20 +556,15 @@ footer a:hover{
 }
 
 /*Earth ---------------------------------------------------------------*/
-.moveEarth {
-  top: -100px; /*Create a media query for this*/
-}
-div#earth_div>canvas{
-/*  height: 700px !important;*/
-}
 
-.wrapper{
-  height: 100%;
-}
 
 span.cesium-credit-textContainer{
   display: none;
 }
 
+.moveEarth {
+
+  width: 100%;
+}
 
 /*test out vw and vh values*/
