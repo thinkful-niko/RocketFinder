@@ -85,14 +85,12 @@ function initialize2() { // webGL Adds Satellite Tile + Animation
         var c = earth.getPosition();
         var elapsed = before ? now - before : 0; 
         before = now;
-        earth.setCenter([c[0], c[1] + 0.6 * (elapsed / 60)]); // Setting center to be current lat and long 0.5 is the velocity
+        earth.setCenter([c[0], c[1] + 0.4 * (elapsed / 30)]); // Setting center to be current lat and long 0.5 is the velocity
         if (stop) {
             return
         };
         requestAnimationFrame(animate); // recursion for "endless" rotation
-
     });
-
 }
 
 function displayMarkers(data, first) { //gets data (JSON) from getData function and creates map markers & left sidebar list items. "first" parameter is a boolean that will either allow or stop #launchlist event from appending more li to html
@@ -232,7 +230,7 @@ $("#launchList").on("click", "li", function(e) {
             var c = earth.getPosition();
             var elapsed = before ? now - before : 0;
             before = now;
-            earth.setCenter([c[0], c[1] + 0.6 * (elapsed / 60)]);
+            earth.setCenter([c[0], c[1] + 0.4 * (elapsed / 30)]);
             if (stop) {
                 return
             };
