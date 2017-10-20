@@ -85,6 +85,8 @@ h2{
 	background: #030416;
 	display: inline-block;
     padding: 10px;
+    position: absolute;
+    z-index: 2;
 }
 
 .logoBG img{
@@ -139,7 +141,7 @@ h2{
     cursor: pointer;
 }
 
-
+/* "Move Me!" Flashing Instruction "Baloon" Tooltip ------------------------*/
 
 /*Side Bar List ----------------------------------------------------------*/
 
