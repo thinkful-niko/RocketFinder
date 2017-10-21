@@ -260,6 +260,7 @@ $("#launchList").on("click", "li", function(e){
 
 
 
+
 // Close button, top popup
 // close = document.getElementById("close");
 // close.addEventListener('click', function() {
@@ -270,12 +271,11 @@ $("#launchList").on("click", "li", function(e){
 
 
 /*TODO:
-1- Make markers clickable (to info window);
-2- Add a search with auto complete;
+
 3- Add google search image API
 4- Add wiki API
 5- Make everything responsive
-6- Active li item style and functionality
+
 7- Mobile functionality for tailored UX
 
 

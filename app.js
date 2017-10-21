@@ -91,7 +91,7 @@ particlesJS('particles-js',
       },
       "onclick": {
         "enable": true,
-        "mode": "push"
+        "mode": "repulse"
       },
       "resize": true
     },
@@ -110,8 +110,8 @@ particlesJS('particles-js',
         "speed": 3
       },
       "repulse": {
-        "distance": -250,
-        "duration": 0.4
+        "distance": 250,
+        "duration": 0.8
       },
       "push": {
         "particles_nb": 1

@@ -331,13 +331,13 @@ input[type="checkbox"]:checked ~ section{
   text-align: left !important;
   color: #dd4e0a;
   padding-right: 0px;
-  width: 15.12vw;
-
+  width: 15vw;
   background: #e5e5e5;
   border-radius: 0.26vw;
-  padding: 0 0.52vw 0 0.78vw;
-
+  padding: 0 0 0 1.7vw;
 }
+
+
 
 @-webkit-keyframes moveRange{
   from{
@@ -392,6 +392,7 @@ input[type="checkbox"]:checked ~ section{
   }
 }
 
+
 .moveUp{
   -webkit-animation: moveRange 1s 0.7s;
   -webkit-animation-fill-mode:forwards;
@@ -415,6 +416,7 @@ input[type="checkbox"]:checked ~ section{
   -webkit-animation: fontSizeAnim 1.5s 0.7s;
   -webkit-animation-fill-mode:forwards;
 }
+
 
 /*Range Input Styling*/
 input[type=range] {
