@@ -42,7 +42,7 @@ function displayMarkers(data, first) { //gets data (JSON) from getData function 
             maxWidth: 150,
             closeButton: true
         }); // Popup description inside the marker, at the moment set to name only.
-
+    
         if (data.launches.length == 1){
           marker.openPopup();
         }
@@ -138,11 +138,6 @@ function initialize2() { // webGL Adds Satellite Tile + Animation
     });
 }
 
-
-
-
-
-
 $("#launchList").on("click", "li", function(e) {
     for (var i = 0; i < markers.length; i++) { //loops through array of markers and removes them from earth element;
 
@@ -151,7 +146,6 @@ $("#launchList").on("click", "li", function(e) {
     }
     // $('input#navigation').attr('checked', false); //This closes navigation when a li element is clicked
     
-
     markers = []; // set markers array to empty
 
 
@@ -196,6 +190,7 @@ $("#launchList").on("click", "li", function(e) {
 
     });
 
+
     stop = true; //Allows user to move earth with its mouse by unlocking position
 
     let streamURL; //Check to see if the launch will have a live stream, if true populate variable with a link, if false populate variable with a <p> instead.
@@ -228,6 +223,8 @@ $("#launchList").on("click", "li", function(e) {
         // $("#note").html("");
         $("#note").toggleClass("close");//this time close is added to the class.
         $("#note").toggleClass("open");//it has to be removed (toggled) otherwise it wont run a second time
+        $("#launchList>li").removeClass("active");
+        $("#launchList>li>a").removeClass("activeCol");
 
         stop = false; //Allow animation after closing "focus"/infoWindow
         requestAnimationFrame(function animate(now) { //return to animation
@@ -245,6 +242,21 @@ $("#launchList").on("click", "li", function(e) {
 
     });
 });
+
+
+// Clears or Adds "active" class on li element.
+$("#launchList").on("click", "li", function(e){
+  if($("#launchList>li").hasClass("active") && $("#launchList>li>a").hasClass("activeCol")){
+    $("#launchList>li").removeClass("active");
+    $("#launchList>li>a").removeClass("activeCol");
+    $(this).addClass("active");
+    $(this).children("a").addClass("activeCol");
+  }else{
+    $(this).addClass("active");
+    $(this).children("a").addClass("activeCol");
+  }
+});
+
 
 
 

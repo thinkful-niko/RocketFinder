@@ -82,6 +82,7 @@ nav li{
     margin:0;
     z-index: 500;
     position: relative;
+    transition: all 0.7s;
 }
 nav a{
     color:#fff;
@@ -94,15 +95,18 @@ nav a{
     border-bottom:1px solid #333;
 }
 nav li:hover{ /*Buggy*/
-    background:#111;
 /*    -ms-transform: translate(30px, 0px);
     -o-transform: translate(30px, 0px);
     -moz-transform: translate(30px, 0px);
     -webkit-transform: translate(30px, 0px);
     transform: translate(30px, 0px);*/
-    border-left: 7px solid #dd4e0a;
- 
+    background: linear-gradient(#8e8e8e, #afafaf);
+    border-left:  7px solid #dd4e0a;
 }
+nav a:hover{
+  color: black;
+}
+
 label{
     display:block;
     font-family:'Titillium Web', 'Helvetica Neue', 'Helvetica', sans-serif;
@@ -577,5 +581,15 @@ span.cesium-credit-textContainer{
 }
 
 
+/*List Active Class   -------------------------------------------*/
+
+.active{
+  background: linear-gradient(#afafaf, white);
+  border-left:  7px solid #dd4e0a;
+}
+
+.activeCol {
+  color: black;
+}
 
 /*test out vw and vh values*/
