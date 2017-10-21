@@ -54,7 +54,7 @@ nav{
     top: 0;
     left: 0px;
     width: 400px;
-    height: calc(100% - 30px); /*100% - footer*/
+    height: calc(100vh - 13vh - 4vh);; /*100% - footer*/
     margin: 0 0 0 -400px;
 
     -moz-transition: all 400ms ease-in;
@@ -192,9 +192,9 @@ input[type="checkbox"]:checked ~ section{
 /*Popup Top Notification -----------------------------------------------------------------------*/
 #note {
     position: absolute;
-    z-index: 101;
-    height: 86.04vh;
-    top: 13.96vh;
+    z-index: 500;
+    height: calc(100vh - 13vh - 4vh);
+    top: 0vh;
     left: 0;
     right: 0;
     background:  linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(254,254,254,1) 27%, rgba(254,254,254,1) 100%);
@@ -229,7 +229,7 @@ input[type="checkbox"]:checked ~ section{
     -webkit-animation: slideDown 1s 0.7s 1 ease forwards; 
     -webkit-transform: translateX(100vw);
     -webkit-animation: slideDown 1s 0.7s 1 ease forwards;
-    z-index: 602; 
+
 }
 
 #note.close{
@@ -237,7 +237,7 @@ input[type="checkbox"]:checked ~ section{
     -webkit-animation: slidUp 1s 0.0s 1 ease forwards; /*Needs the 0 delay*/
     -webkit-transform: translateX(100vw);
     -webkit-animation: slideUp 1s 0.0s 1 ease forwards; 
-    z-index: 602;
+
 }
 
 .displayNone{
@@ -282,7 +282,7 @@ input[type="checkbox"]:checked ~ section{
 #startScreen{
   width: 100vw;
   height: 100vh;
-  z-index: 600;
+  z-index: 800;
   position: absolute;
   display: block;
   background: black;
@@ -339,7 +339,7 @@ input[type="checkbox"]:checked ~ section{
 }
 
 .controller{ /*Starting Position, animate it's top position later*/
-  z-index: 601;
+  z-index: 801;
   position: absolute;
   top: 65vh;
   display: block;
@@ -567,11 +567,22 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 /*Top Bar + Logo + Logo BG --------------------------------------------------*/
+.logoBG{
+  position: relative;
+  z-index: 700;
+  left: 0vw;
+  width: 100vw;
+  top: 0vw;
+  background: black;
+  height: 12vh;
+}
+
 .logoBG>img{    
   margin: 10px 0px;
   padding: 15px 35px;
   height: 80px;
   position: relative;
+
 
 }
 
@@ -580,7 +591,7 @@ footer {
     position: absolute;
     background: black;
     width: 100vw;
-    height: 3.08vh;
+    height: 5vh;
     bottom: 0px;
     margin: 0;
     text-align: center;
