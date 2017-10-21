@@ -9,10 +9,12 @@
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
 
+    <!-- Sets viewport to device width -->
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+
     <meta charset="utf-8">
 
     <link rel="stylesheet" type="text/css" href="Menu.css">
-
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 
     <title>Rocket Finder</title>
@@ -21,30 +23,32 @@
 
 <body>
 
-<div id="startScreen">	
-	<h1>Discover Future <br>Rocket Launches</h1>
-	<p>Explore the next <br>scheduled <b>space missions.</b></p>
-	<div id="particles-js"></div>
-	<img src="Background/EarthBackgroundCompressed.png" alt="earth" class="earthImg">
-	<img src="Logo/4.png" alt="Logo" class="logo">
-</div>
-
-<div class="controller blink">
-          <h2>Find The Next:</h2>
-          <input class="sliderControl" type="range" min="0" max="50" value="0" step="1"  oninput="showValue(this.value); $('.controller').removeClass('blink');" onchange="showValue(this.value); $('.controller').removeClass('blink');"  />
-          <p><span id="range">0</span> Space Missions</p>
-</div>
-
-<div id="note" class="displayNone">
-    You smell good. <a id="close">[close]</a>
-</div>
-    <div class="topBar">
-        <div class="logoBG">
-            <img src="Logo/4.png" alt="Logo">
-        </div>
-       
+    <div id="startScreen">
+        <h1>Discover Future <br>Rocket Launches</h1>
+        <p>Explore the next
+            <br>scheduled <b>space missions.</b>
+        </p>
+        <div id="particles-js"></div>
+        <img src="Background/EarthBackgroundCompressed.png" alt="earth" class="earthImg">
+        <img src="Logo/4.png" alt="Logo" class="logo">
     </div>
-   
+
+    <div class="controller blink">
+        <h2>Find The Next:</h2>
+        <input class="sliderControl" type="range" min="0" max="50" value="0" step="1" oninput="showValue(this.value); $('.controller').removeClass('blink');" onchange="showValue(this.value); $('.controller').removeClass('blink');" />
+        <p><span id="range">0</span> Space Missions</p>
+    </div>
+
+    <div id="note" class="displayNone">
+        You smell good. <a id="close">[close]</a>
+    </div>
+
+    <div class="logoBG">
+        <img src="Logo/4.png" alt="Logo">
+
+
+    </div>
+
     <div class="wrapper">
 
         <input type="checkbox" id="navigation" />
@@ -57,30 +61,17 @@
             </ul>
         </nav>
 
+        <div class="earthContainer">
+            <div id="earth_div" class="moveEarth"></div>
+        </div>
 
-                    <div id="earth_div" class="moveEarth"></div>
-
-                    <!-- <button type="button" class="btn">Click me!</button>
-	<p class="text">Replace me!!</p>
--->
-
-                    <!-- <main role="main">
-
-	<div class="listBG"></div>
-
-	<ol id="launchList" class="leftSideBar">
-		 Populated in JS 
-</ol> 
-
- </main> -->
-
-           
     </div>
     </div>
 
 
     <footer role="content-info">
-        <p>Coded and Designed by <a href="https://github.com/DevTrader" target="_blank">Nicolas K. Sartor</a></p>
+        <p>Coded and Designed by <a href="https://github.com/DevTrader" target="_blank">Nicolas K. Sartor</a>
+        </p>
     </footer>
     <!-- For particles.js to become a background -->
 
@@ -88,6 +79,7 @@
     <script type="text/javascript" src="particles.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script src="WebGLEarthapi.js"></script>
+
     <script type="text/javascript" src="main.js"></script>
 
 </body>

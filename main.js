@@ -25,78 +25,11 @@ $(document).ready(function() {
     initialize2();
 });
 
-
-//Show value for # of launches
-function showValue(newValue) {
-    document.getElementById("range").innerHTML = newValue;
-}
-
-$('input#navigation+label').css("visibility", "hidden"); //Hide Slide Menu Button
-
-
-// Slider Functionality and Value
-$("input.sliderControl").on("change", (e) => { //once the slider (input) changes, it fetches "e" value and sends it to getData
-
-    for (var i = 0; i < markers.length; i++) { //loops through array of markers and removes them from earth element;
-
-        markers[i].removeFrom(earth);
-        $(".jsLaunch").remove(); //Currently this removes all list items and resets the list to fit the "e" value. Should I implement live update through a loop?
-    }
-  
-    $('input#navigation+label').css("visibility", "initial");// Show Button after moving slider
-    $("#startScreen").addClass("fadeOut"); //Fades start screen
-    $(".controller p").addClass("fontSize");
-    
-    setTimeout(function(){
-      $("#startScreen").addClass("displayNone");
-    }, 2200); //Clears invisible startscreen
-
-
-    
-    $(".controller").addClass("moveUp"); // Animates range input
-    $("input[type=range]").addClass("shrink");
-    
-    markers = [];
-
-    getData(e.target.value); //gets value from (e) and send it to getData as the num parameter
-    $('#navigation').prop('checked', true); //slide menu in automatically
-    if(document.getElementById("range").innerHTML == 0){$('#navigation').prop('checked', false)};//close side menu if slider value is 0
-});
-
-// Global variables
-var options = {
-    atmosphere: true,
-    center: [0, 0],
-    zoom: 0
-};
-var earth = new WE.map('earth_div', options);
-var markers = [];
-let stop = false;
-
-function initialize2() { // webGL Adds Satellite Tile + Animation 
-    WE.tileLayer('https://tileserver.maptiler.com/nasa/{z}/{x}/{y}.jpg', { //fetching texture
-        minZoom: 0,
-        maxZoom: 5,
-        attribution: 'NASA'
-    }).addTo(earth);
-
-    var before = null;
-    requestAnimationFrame(function animate(now) {
-        var c = earth.getPosition();
-        var elapsed = before ? now - before : 0; 
-        before = now;
-        earth.setCenter([c[0], c[1] + 0.4 * (elapsed / 30)]); // Setting center to be current lat and long 0.5 is the velocity
-        if (stop) {
-            return
-        };
-        requestAnimationFrame(animate); // recursion for "endless" rotation
-    });
-}
-
 function displayMarkers(data, first) { //gets data (JSON) from getData function and creates map markers & left sidebar list items. "first" parameter is a boolean that will either allow or stop #launchlist event from appending more li to html
 
 
     //console.log(data);
+    
     data.launches.forEach((item, i) => { // loops through JSON, items are the elements in the array, i is the # of the item inside the array
 
 
@@ -135,6 +68,77 @@ function displayMarkers(data, first) { //gets data (JSON) from getData function 
 
     window.markers = markers; //probably unecessary at this point, but I'll leave it here.
 }
+
+//Show value for # of launches
+function showValue(newValue) {
+    document.getElementById("range").innerHTML = newValue;
+}
+
+$('input#navigation+label').css("visibility", "hidden"); //Hide Slide Menu Button
+
+
+// Slider Functionality and Value
+$("input.sliderControl").on("change", (e) => { //once the slider (input) changes, it fetches "e" value and sends it to getData
+
+    for (var i = 0; i < markers.length; i++) { //loops through array of markers and removes them from earth element;
+
+        markers[i].removeFrom(earth);
+        $(".jsLaunch").remove(); //Currently this removes all list items and resets the list to fit the "e" value. Should I implement live update through a loop?
+    }
+  
+    $('input#navigation+label').css("visibility", "initial");// Show Button after moving slider
+    $("#startScreen").addClass("fadeOut"); //Fades start screen
+    $(".controller p").addClass("fontSize");
+    
+    setTimeout(function(){
+      $("#startScreen").addClass("displayNone");
+    }, 2200); //Clears invisible startscreen
+
+
+    
+    $(".controller").addClass("moveUp"); // Animates range input
+    $("input[type=range]").addClass("shrink");
+    
+    markers = [];
+
+    getData(e.target.value); //gets value from (e) and send it to getData as the num parameter
+
+    $('#navigation').prop('checked', true); //slide menu in automatically
+
+    if(document.getElementById("range").innerHTML == 0){$('#navigation').prop('checked', false)};//close side menu if slider value is 0
+});
+
+// Global variables
+var options = {
+    atmosphere: true,
+    center: [0, 0],
+    zoom: 0
+};
+var earth = new WE.map('earth_div', options);
+var markers = [];
+let stop = false;
+
+function initialize2() { // webGL Adds Satellite Tile + Animation 
+    WE.tileLayer('https://tileserver.maptiler.com/nasa/{z}/{x}/{y}.jpg', { //fetching texture
+        minZoom: 0,
+        maxZoom: 5,
+        attribution: 'NASA'
+    }).addTo(earth);
+
+    var before = null;
+    requestAnimationFrame(function animate(now) {
+        var c = earth.getPosition();
+        var elapsed = before ? now - before : 0; 
+        before = now;
+        earth.setCenter([c[0], c[1] + 0.4 * (elapsed / 30)]); // Setting center to be current lat and long 0.5 is the velocity
+        if (stop) {
+            return
+        };
+        requestAnimationFrame(animate); // recursion for "endless" rotation
+    });
+}
+
+
 
 
 
