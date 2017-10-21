@@ -82,7 +82,7 @@ nav li{
     margin:0;
     z-index: 500;
     position: relative;
-    transition: all 0.7s;
+    transition: all 0.5s;
 }
 nav a{
     color:#fff;
@@ -121,13 +121,14 @@ label{
     line-height:1.1em;
     position:absolute;
     top:10px;
-    left:0px;
+    left: 0px;
     -moz-transition:all 400ms ease-in;
     -webkit-transition:all 400ms ease-in;
     -o-transition:all 400ms ease-in;
     transition:all 400ms ease-in;
-    z-index:500;
+    z-index:499;
     padding-left: 1%;
+    border-bottom: 0.5vh solid rgba(40, 40, 40, 0.7);
 }
 label img {
   padding-top: 5px;
