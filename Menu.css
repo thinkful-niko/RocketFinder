@@ -326,7 +326,7 @@ input[type="checkbox"]:checked ~ section{
   margin: 0.51vh 0.26vw;
   font-size: 1.78vw;
   position: relative;
-  transform: translateX(11vw);
+  transform: translateX(10vw);
   bottom: -1vw;
   text-align: left !important;
   color: #dd4e0a;
@@ -378,7 +378,7 @@ input[type="checkbox"]:checked ~ section{
 @-webkit-keyframes fontSizeAnim{
   0%{
     font-size: 1.78vw;
-    transform: translateX(11vw);
+    transform: translateX(10vw);
     color: #dd4e0a;
     background: white;
     bottom: -1vw;
