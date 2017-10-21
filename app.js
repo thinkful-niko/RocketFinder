@@ -16,9 +16,9 @@ particlesJS('particles-js',
   {
   "particles": {
     "number": {
-      "value": 159,
+      "value": 100,
       "density": {
-        "enable": false,
+        "enable": true,
         "value_area": 1763.753266952075
       }
     },
@@ -62,7 +62,7 @@ particlesJS('particles-js',
     },
     "line_linked": {
       "enable": true,
-      "distance": 90,
+      "distance": 110,
       "color": "#ffffff",
       "opacity": 0.4,
       "width": 1
@@ -121,7 +121,7 @@ particlesJS('particles-js',
       }
     }
   },
-  "retina_detect": true
+  "retina_detect": false
 }
 
 );
