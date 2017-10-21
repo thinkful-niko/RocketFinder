@@ -261,19 +261,21 @@ input[type="checkbox"]:checked ~ section{
 }
 
 #closeWindow{
-  position: relative;
-  top: -30vh;
+  position: absolute;
+  top: 2vh;
   left: 1vw;
-  font-size: 3vh;
+  font-size: 1.5vh;
   font-weight: 900;
-  background: #dd4e0a;
-  padding: 0px 1.03vh;
+  background: #a80520;
+  padding: 0px 1vh;
   box-shadow: -2px 2px #5e331f;
   transition: all 0.4s;
+  border-radius: 10%;
+  color: white;;
 }
 
 #closeWindow:hover{
-  background: #a33704;
+  background: #6b0717;
 }
 
 /*Start Screen ----------------------------------------------------------------------------------------------*/

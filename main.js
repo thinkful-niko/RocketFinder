@@ -207,7 +207,7 @@ $("#launchList").on("click", "li", function(e) {
         "<a href='" + singleLaunch.rocket.wikiURL + "' target='_blank'>" + "About Rocket" + "</a>" + "<br>" +
         "<a href='" + singleLaunch.location.pads[0].mapURL + "' target='_blank'>" + "Map" + "</a>" + "<br>" +
         streamURL +
-        "</p> <span id='closeWindow'>X</span></div>");
+        "</p></div> <span id='closeWindow'>X</span>");
 
     // INFO WINDOW SLIDING ANIMATION WITH CSS KEYFRAMES CLASSES
     $("#note div").addClass("infoWindow");
