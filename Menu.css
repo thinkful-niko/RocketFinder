@@ -625,11 +625,18 @@ span.cesium-credit-textContainer{
 
 .earthContainer{
   position: relative;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 .moveEarth {
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+}
+
+.moveEarth>canvas {
+  width: 100vw !important;
+  height: 100vh !important;
 }
 
 
