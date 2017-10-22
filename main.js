@@ -19,6 +19,7 @@ function getData(num) {
     });
 };
 
+
 // WebGL initialize
 $(document).ready(function() {
 
@@ -103,9 +104,17 @@ $("input.sliderControl").on("change", (e) => { //once the slider (input) changes
 
     getData(e.target.value); //gets value from (e) and send it to getData as the num parameter
 
-    $('#navigation').prop('checked', true); //slide menu in automatically
+    if(document.getElementById("range").innerHTML != 0){
+        setTimeout(function(){
+            $('#navigation').prop('checked', true); //slide menu in automatically
+        }, 700);
+    }
 
-    if(document.getElementById("range").innerHTML == 0){$('#navigation').prop('checked', false)};//close side menu if slider value is 0
+    if(document.getElementById("range").innerHTML == 0){
+       
+            $('#navigation').prop('checked', false)
+        
+    };//close side menu if slider value is 0
 });
 
 // Global variables
@@ -189,6 +198,25 @@ $("#launchList").on("click", "li", function(e) {
 
 
     });
+
+   /* IMAGE SEARCH API
+    let searchName = singleLaunch.rocket.name;
+    let imgSearchAPIURL = "https://api.qwant.com/api/search/images?count=5&offset=1&q=" + searchName;
+    let thisImage;
+
+
+    $.ajax({
+        type: "GET",
+        url: imgSearchAPIURL, // `${num} gets the num parameter which is the value from the slider input, (e) on line 27`
+        success: function(dataIMG) {
+            console.log(dataIMG);
+            //thisImage = dataIMG.data.results.items[0].media;
+        },
+        dataType: 'json',
+    }); 
+
+    "No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'null' is therefore not allowed access."
+    */ 
 
 
     stop = true; //Allows user to move earth with its mouse by unlocking position

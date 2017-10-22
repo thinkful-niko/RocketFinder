@@ -16,7 +16,7 @@ h1, p, li{
     margin:0 0 1em;
 }
 section li{
-    margin:0 0 10px;
+    margin:0 0 1.03vh;
 }
 h1{
     font-size:2.5em;
@@ -42,7 +42,7 @@ p{
 
 }
 section{
-    padding:30px 30px 30px 80px;
+    padding:3.08vh 1.56vw 3.08vh 4.17vw;
     -moz-transition:all 200ms ease-in;
     -webkit-transition:all 200ms ease-in;
     -o-transition:all 200ms ease-in;
@@ -53,9 +53,9 @@ nav{
     position: absolute;
     top: 0;
     left: 0px;
-    width: 400px;
+    width: 20.83vw;
     height: calc(100vh - 13vh - 4vh);; /*100% - footer*/
-    margin: 0 0 0 -400px;
+    margin: 0 0 0 -20.83vw;
 
     -moz-transition: all 400ms ease-in;
     -webkit-transition: all 400ms ease-in;
@@ -90,7 +90,7 @@ nav a{
     font-size:1em;
     font-family:'Titillium Web', 'Helvetica Neue', 'Helvetica', sans-serif;    text-decoration:none;
     display:block;
-    padding:12px 15px;
+    padding:1.23vh 0.78vw;
     font-weight:300;
     letter-spacing:2px;
     border-bottom:1px solid #333;
@@ -102,7 +102,7 @@ nav li:hover{ /*Buggy*/
     -webkit-transform: translate(30px, 0px);
     transform: translate(30px, 0px);*/
     background: linear-gradient(#8e8e8e, #afafaf);
-    border-left:  7px solid #dd4e0a;
+    border-left:  0.36vw solid #dd4e0a;
 }
 nav a:hover{
   color: black;
@@ -113,15 +113,15 @@ label{
     font-family:'Titillium Web', 'Helvetica Neue', 'Helvetica', sans-serif;
     font-weight:700;
     background:#dd4e0a;
-    width:42px;
-    height:42px;
-    line-height:42px;
+    width: 45px;
+    height: 42px;
+    line-height:4.31vh;
     color:#fff;
     text-align:center;
     font-size:2em;
     line-height:1.1em;
     position:absolute;
-    top:10px;
+    top:1.03vh;
     left: 0px;
     -moz-transition:all 400ms ease-in;
     -webkit-transition:all 400ms ease-in;
@@ -132,7 +132,7 @@ label{
     border-bottom: 0.5vh solid rgba(40, 40, 40, 0.7);
 }
 label img {
-  padding-top: 5px;
+  padding-top: 0.51vh;
 }
 label:hover{
   cursor: pointer;
@@ -149,20 +149,20 @@ input[type="checkbox"]:checked ~ nav{ /*Slide action*/
     margin:0;
 }
 input[type="checkbox"]:checked ~ label{
-    left:410px;
+    left:21.35vw;
     padding-left: 8%;
-    margin-left: -10px;
+    margin-left: -0.52vw;
 }
 input[type="checkbox"]:checked ~ label img{
     transform: rotate(180deg);
     padding-top: 0;
-    padding-bottom: 5px;
+    padding-bottom: 0.51vh;
 }
 input[type="checkbox"]:checked ~ section{
-    -webkit-transform:translate3d(260px, 0, 0);
-    -moz-transform:translate3d(260px, 0, 0);
-    -o-transform:translate3d(260px, 0, 0);
-    transform:translate3d(260px, 0, 0);
+    -webkit-transform:translate3d(13.54vw, 0, 0);
+    -moz-transform:translate3d(13.54vw, 0, 0);
+    -o-transform:translate3d(13.54vw, 0, 0);
+    transform:translate3d(13.54vw, 0, 0);
 }
 
 /*Scrollbar for list ------------------------------------------------------------------------------------*/
@@ -198,7 +198,7 @@ input[type="checkbox"]:checked ~ section{
     left: 0;
     right: 0;
     background:  linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(254,254,254,1) 27%, rgba(254,254,254,1) 100%);
-    border-left: 7px solid #dd4e0a;
+    border-left: 0.36vw solid #dd4e0a;
     text-align: left;
     line-height: 2.5;
     overflow: hidden; 
@@ -351,6 +351,7 @@ input[type="checkbox"]:checked ~ section{
   width: 100vw;
   text-align: center;
 }
+
 
 .controller h2 {
   color: white;
@@ -574,13 +575,13 @@ input[type=range]:focus::-ms-fill-upper {
   width: 100vw;
   top: 0vw;
   background: black;
-  height: 12vh;
+  height: 14vh;
 }
 
 .logoBG>img{    
-  margin: 10px 0px;
-  padding: 15px 35px;
-  height: 80px;
+  margin: 1.03vh 0px;
+  padding: 1.54vh 1.82vw;
+  height: 8.21vh;
   position: relative;
 
 
