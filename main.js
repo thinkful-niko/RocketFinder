@@ -254,7 +254,9 @@ $("#launchList").on("click", "li", function(e) {
         $("#launchList>li").removeClass("active");
         $("#launchList>li>a").removeClass("activeCol");
 
+
         stop = false; //Allow animation after closing "focus"/infoWindow
+                    
         requestAnimationFrame(function animate(now) { //return to animation
             var c = earth.getPosition();
             var elapsed = before ? now - before : 0;
@@ -262,9 +264,14 @@ $("#launchList").on("click", "li", function(e) {
             earth.setCenter([c[0], c[1] + 0.4 * (elapsed / 30)]);
             if (stop) {
                 return
-            };
+             };
             requestAnimationFrame(animate);
         });
+        
+
+
+
+
 
         displayMarkers(allData, false); //display markers again
 
@@ -285,8 +292,28 @@ $("#launchList").on("click", "li", function(e){
   }
 });
 
+// When you click the earth it stops animating for a setTimout ammount of times BUG: opening and closing note during the timout causes acceleration;
+$("#earth_div").click(function() {
+     var before = null;
+     stop = true;
+     setTimeout(function(){
+            stop = false; //Allow animation after closing "focus"/infoWindow
+                    
+            requestAnimationFrame(function animate(now) { //return to animation
+                var c = earth.getPosition();
+                var elapsed = before ? now - before : 0;
+                before = now;
+                earth.setCenter([c[0], c[1] + 0.2 * (elapsed / 30)]);
+                if (stop) {
+                    return
+                };
+            requestAnimationFrame(animate);
+        });
+        
 
+        }, 3500);
 
+})
 
 
 // Close button, top popup
