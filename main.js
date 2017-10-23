@@ -225,16 +225,16 @@ $("#launchList").on("click", "li", function(e) {
     if (singleLaunch.vidURLs.length == 0) {
         streamURL = "No Stream/ Stream TBA"
     } else {
-        streamURL = "<a href='" + singleLaunch.vidURLs[0] + "' target='_blank'>" + "Live Stream Schedule" + "</a>" + "<br>"
+        streamURL = "<a href='" + singleLaunch.vidURLs[0] + "' target='_blank'>" + "Stream Information" + "</a>"
     };
 
     $("#note").html( //Info Window
-        "<div class='infoContent'> <h2>" + singleLaunch.name + "</h2><p>" +
-        singleLaunch.net + "<br>" +
-        singleLaunch.location.name + "<br>" +
-        "<a href='" + singleLaunch.rocket.wikiURL + "' target='_blank'>" + "About Rocket" + "</a>" + "<br>" +
-        "<a href='" + singleLaunch.location.pads[0].mapURL + "' target='_blank'>" + "Map" + "</a>" + "<br>" +
-        streamURL +
+        "<div class='infoContent'> <h2>" +singleLaunch.name + "</h2><p>" +
+        "<b>Launch Date and Time: </b>" + singleLaunch.net + "<br>" +
+        "<b>Launch Location: </b>" + singleLaunch.location.name + "<br>" +
+        "<b>Live Stream: </b>"+ streamURL + "<br><br>" +
+        "<a href='" + singleLaunch.rocket.wikiURL + "' target='_blank'>" + "Learn More About This Rocket" + "</a>" + "<br>" +
+        "<a href='" + singleLaunch.location.pads[0].mapURL + "' target='_blank'>" + "Map Location" + "</a>" +
         "</p></div> <span id='closeWindow'>X</span>");
 
     // INFO WINDOW SLIDING ANIMATION WITH CSS KEYFRAMES CLASSES

@@ -87,7 +87,7 @@ nav li{
 }
 nav a{
     color:#fff;
-    font-size:1em;
+    font-size: 1em;
     font-family:'Titillium Web', 'Helvetica Neue', 'Helvetica', sans-serif;    text-decoration:none;
     display:block;
     padding:1.23vh 0.78vw;
@@ -206,6 +206,19 @@ input[type="checkbox"]:checked ~ section{
     -moz-box-shadow:    0 0 5px black;
     box-shadow:         0 0 5px black;
 
+}
+#note a{
+    color:#dba257;
+    text-decoration: none;
+    font-weight: 700;
+
+    transition: color 0.5s;
+}
+
+#note a:hover{
+  
+  color: green;
+  
 }
 
 @-webkit-keyframes slideDown {
@@ -356,6 +369,8 @@ input[type="checkbox"]:checked ~ section{
 .controller h2 {
   color: white;
   text-align: center;
+  font-size: 1.5vw;
+
 }
 
 .controller p{
@@ -596,7 +611,7 @@ footer {
     bottom: 0px;
     margin: 0;
     text-align: center;
-    z-index: 700;
+    z-index: 999;
 }
 
 footer p {
