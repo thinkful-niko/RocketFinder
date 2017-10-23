@@ -1,5 +1,7 @@
 let allData;
 
+const mq = window.matchMedia( "(max-width: 980px)" );
+
 $("#note").html("");
 
 function getData(num) {
@@ -90,7 +92,15 @@ $("input.sliderControl").on("change", (e) => { //once the slider (input) changes
     $('input#navigation+label').css("visibility", "initial");// Show Button after moving slider
     $("#startScreen").addClass("fadeOut"); //Fades start screen
     $(".controller p").addClass("fontSize");
-    
+
+    if (mq.matches) { // media query
+        setTimeout(function(){
+            $(".controller h2").addClass("displayNone");
+        }, 1200);
+    }
+
+
+
     setTimeout(function(){
       $("#startScreen").addClass("displayNone");
     }, 2200); //Clears invisible startscreen

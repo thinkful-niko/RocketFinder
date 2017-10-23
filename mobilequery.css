@@ -10,105 +10,174 @@ Make infowindow full width with the close button exactly like the nav close
 */
 
 @media screen and (max-width: 980px) {
-/*START SCREEN -----------------------------------------------------------*/
-.earthImg{
-  height: 40vh;
-  width: 200vw;
-}
+ /*START SCREEN -----------------------------------------------------------*/
 
-#startScreen>h1{
-  font-size: 7.56vw;
-  width: 70vw;
-}
+  .earthImg{
+    height: 40vh;
+    width: 200vw;
+  }
 
-#startScreen>p{
-  width: 70vw;
-  font-size: 5.56vw;
-}
+  #startScreen>h1{
+    font-size: 7.56vw;
+    width: 70vw;
+  }
 
-#startScreen>p, #startScreen>h1{
-  top: 20vh;
-  right: 10vw;
-}
+  #startScreen>p{
+    width: 70vw;
+    font-size: 5.56vw;
+  }
 
-.controller{
-  max-width: 90vw;
-  width: 90vw;
-  top: 60vh;
-/*  background: rgba(242, 242, 242, 0.7);*/
-  border-radius: 5px;
-  padding: 5px;
-  padding-right: 10px;
-}
+  #startScreen>p, #startScreen>h1{
+    top: 20vh;
+    right: 10vw;
+  }
 
-.controller h2 {
-  font-size: 5.5vw;
-  color: black;
-  margin-top: 0;
-  color: white;
-
-}
-
-.controller p{
-  font-size: 3.5vw;
-  width: 50vw;
-  transform: translateX(30vw);
-  background: none;
-  font-weight: 900;
-
-}
-
-@-webkit-keyframes moveRange{
-  from{
+  .controller{
+    max-width: 100vw;
+    width: 90vw;
     top: 60vh;
+    background: rgba(239, 239, 239, 1);
+    /*border-radius: 5px;*/
+    padding: 5px 20px;
+    margin: 0 auto;
+    border-bottom: 5px solid #777777;
+
   }
 
-  to{
-    top: 13vh;
-  }
-}
+  .controller h2 {
+    font-size: 5.5vw;
+    color: black;
+    margin-top: 0;
+    color: black;
+    display: initial;
 
-@-webkit-keyframes changeWidth{
-  from{
-   
   }
-  to{
-    
-  }
-}
 
-@-webkit-keyframes fontSizeAnim{
-  0%{
+  .controller p{
     font-size: 3.5vw;
+    width: 50vw;
+    transform: translateX(30vw);
+    background: none;
+    font-weight: 900;
+
+  }
+
+  @-webkit-keyframes moveRange{
+    from{
+      top: 60vh;
+      height: auto;
+    }
+
+    to{
+      top: 13vh;
+      height: 8vh;
+    }
+  }
+
+  @-webkit-keyframes changeWidth{
+    from{
+     
+    }
+    to{
+      
+    }
+  }
+
+  @-webkit-keyframes fontSizeAnim{
+    0%{
+      font-size: 3.5vw;
+    }
+    100%{
+      font-size: 3.5vw;
+    }
+  }
+
+  @-webkit-keyframes blinkAnim{
+  0%{
+    opacity: 1;
   }
   100%{
-    font-size: 3.5vw;
+    opacity: 1;
   }
 }
 
-input[type=range] {
-  -webkit-appearance: none; 
-  width: 90vw; 
-  background: transparent;
 
-}
+  input[type=range] {
+    -webkit-appearance: none; 
+    width: 90vw; 
+    background: transparent;
 
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  border: 1px solid #000000;
-  height: 5vh;
-  width: 8vw;
-  border-radius: 3px;
-  background: #ffffff;
-  cursor: pointer;
-  margin-top: -2vh; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
-}
+  }
 
-.logo{
-  width: auto;
-  height: 5vh;
-}
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    height: 5vh;
+    width: 8vw;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+    margin-top: -2vh; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+  }
+  input[type=range]::-moz-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    height: 5vh;
+    width: 8vw;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+    margin-top: -2vh; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+  }
+  input[type=range]::-ms-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    height: 5vh;
+    width: 8vw;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+    margin-top: -2vh; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+  }
+
+  .logo{
+    width: auto;
+    height: 5vh;
+  }
+
+  /*NAV ------------------------------------------------------------------------------------------*/
+
+  nav{
+    width: 100vw;
+    top: 8vh;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
