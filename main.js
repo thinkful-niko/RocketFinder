@@ -163,7 +163,10 @@ $("#launchList").on("click", "li", function(e) {
         markers[i].removeFrom(earth);
 
     }
-    // $('input#navigation').attr('checked', false); //This closes navigation when a li element is clicked
+
+    if (mq.matches) { // closes nav when clicked (MOBILE ONLY)
+        $('input#navigation').attr('checked', false);
+    }
     
     markers = []; // set markers array to empty
 
