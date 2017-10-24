@@ -38,7 +38,7 @@ Make infowindow full width with the close button exactly like the nav close
     top: 60vh;
     background: rgba(239, 239, 239, 1);
     /*border-radius: 5px;*/
-    padding: 5px 20px;
+    padding: 1vh 5vw;
     margin: 0 auto;
     border-bottom: 5px solid #777777;
 
@@ -69,7 +69,7 @@ Make infowindow full width with the close button exactly like the nav close
     }
 
     to{
-      top: 13vh;
+      top: 14vh;
       height: 8vh;
     }
   }
@@ -148,11 +148,17 @@ Make infowindow full width with the close button exactly like the nav close
     height: 5vh;
   }
 
+  /*Logo ----------------------------------------------------------------------------------------*/
+  .logoBG>img {
+    margin: 0vh auto;
+    display: block;
+    height: 11vh;
+  }
   /*NAV ------------------------------------------------------------------------------------------*/
 
   nav{
     width: 100vw;
-    top: 8vh;
+    top: 10.7vh;
     margin: 0 0 0 -100vw; 
   }
 
