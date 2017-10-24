@@ -260,7 +260,7 @@ input[type="checkbox"]:checked ~ section{
 
 #note.close{
     -webkit-transform: translateX(100vw);
-    -webkit-animation: slidUp 1s 0.0s 1 ease forwards; /*Needs the 0 delay*/
+    -webkit-animation: slideUp 1s 0.0s 1 ease forwards; /*Needs the 0 delay*/
     -moz-transform: translateX(100vw);
     -moz--animation: slideUp 1s 0.0s 1 ease forwards; 
     -o-transform: translateX(100vw);
