@@ -203,6 +203,7 @@ footer p {
 /*get the label down, and only display it when nav is closed*/
   label{
     top: 40vh;
+    padding-left: 5vw;
   }
 
   input[type="checkbox"]:checked ~ label{
@@ -247,7 +248,15 @@ footer p {
     width: 100vw;
   }
 
+  #closeWindow{
+    padding: 0vh 4vw;
+    margin-left: 10px;
+    top: 2vh;
+    font-size: 18px;
+    right: 4vw;
+    left: auto;
 
+  }
 
 
 
