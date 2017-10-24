@@ -9,7 +9,7 @@ Make infowindow full width with the close button exactly like the nav close
 
 */
 
-@media screen and (max-width: 622px){
+@media screen and (max-width: 720px){
 
 body{
   overflow-y: hidden;

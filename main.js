@@ -1,6 +1,6 @@
 let allData;
 
-const mq = window.matchMedia( "(max-width: 622px)" );
+const mq = window.matchMedia( "(max-width: 720px)" );
 
 $("#note").html("");
 
