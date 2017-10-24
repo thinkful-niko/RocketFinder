@@ -176,7 +176,7 @@ footer p {
     width: 100vw;
     top: 10.7vh;
     margin: 0 0 0 -100vw;
-    height: 70.5vh; 
+    height: calc(100% - 10.7vh); 
   }
 
   input[type="checkbox"]:checked ~ nav{ /*Slide action*/
