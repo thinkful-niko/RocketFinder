@@ -18,7 +18,15 @@ body{
 
 footer{
   bottom: 0vh;
+  z-index: 499;
+  height: 6.5vh;
 }
+footer p {
+  margin-top: 1.5vh;
+  font-size: 5.5em;
+}
+
+
  /*START SCREEN -----------------------------------------------------------*/
 
   .earthImg{
