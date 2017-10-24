@@ -243,13 +243,21 @@ $("#launchList").on("click", "li", function(e) {
         streamURL = "<a href='" + singleLaunch.vidURLs[0] + "' target='_blank'>" + "Stream Information" + "</a>"
     };
 
+    let mission;
+    if (singleLaunch.missions.length == 0) {
+        mission = "<b>Mission:</b> Unknown";
+    } else {
+        mission = "<b>Mission Name: </b>" + singleLaunch.missions[0].name + "<br><b>Mission Type: </b>" +  singleLaunch.missions[0].typeName;
+    };
+
     $("#note").html( //Info Window
         "<div class='infoContent'> <h2>" + singleLaunch.rocket.name + "</h2><p>" +
         "<b>Launch Date and Time: </b>" + singleLaunch.net + "<br>" +
         "<b>Launch Location: </b>" + singleLaunch.location.name + "<br>" +
+        mission + "<br>" +
         "<b>Live Stream: </b>"+ streamURL + "<br><br>" +
-        "<a href='" + singleLaunch.rocket.wikiURL + "' target='_blank'>" + "Learn More About This Rocket" + "</a>" + "<br>" +
-        "<a href='" + singleLaunch.location.pads[0].mapURL + "' target='_blank'>" + "Map Location" + "</a>" +
+        "<a href='" + singleLaunch.rocket.wikiURL + "' target='_blank'>" + "Learn More About This Rocket" + "</a>" +"<br>" +
+        "<a href='" + singleLaunch.location.pads[0].mapURL + "' target='_blank'>" + "Map Location" + "</a>" + "<br>" +
         "</p></div> <span id='closeWindow'>X</span>");
 
     // INFO WINDOW SLIDING ANIMATION WITH CSS KEYFRAMES CLASSES
