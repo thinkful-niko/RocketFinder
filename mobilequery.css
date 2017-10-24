@@ -193,7 +193,7 @@ footer p {
     width: 100vw;
     top: 10.7vh;
     margin: 0 0 0 -100vw;
-    height: calc(100% - 10.7vh - 3.5vh); 
+    height: calc(100% - 10.7vh); 
   }
 
   input[type="checkbox"]:checked ~ nav{ /*Slide action*/
@@ -214,8 +214,32 @@ footer p {
 
   /*Note/InfoWindow -------------------------------------------------------*/
 
+  #note{
+    width: 100vw;
+    top: 10.7vh;
+    height: calc(100% - 10.7vh);
+  }
 
+  @-webkit-keyframes slideDown {
+    0%{ -webkit-transform: translateX(100vw); } 
+    100%/*, 90%*/ { -webkit-transform: translateX(0vw); } 
+  }
+  @-moz-keyframes slideDown {
+    0%{ -webkit-transform: translateX(100vw); }
+    100%/*, 90%*/ { -webkit-transform: translateX(70vw); }
+  }
+  @-webkit-keyframes slideUp{
+    0% { -webkit-transform: translateX(70vw); }
+    100%/*, 90%*/ { -webkit-transform: translateX(100vw); } /*Initial position*/ 
+  }
+  @-moz-keyframes slideUp {
+    0% { -webkit-transform: translateX(70vw); }
+    100%/*, 90%*/ { -webkit-transform: translateX(100vw); }
+  }
 
+  .infoContent{
+    width: 100vw;
+  }
 
 
 
