@@ -254,15 +254,15 @@ $("#launchList").on("click", "li", function(e) {
     if (singleLaunch.rocket.agencies == 0) {
         agency = "<b>Agency:</b> Unknown";
     } else {
-        agency = "<b>Agency Name: </b><a href='" + singleLaunch.rocket.agencies[0].infoURL + "' target='_blank'>" + singleLaunch.rocket.agencies[0].name + "</a><br><b>Mission Type: </b>";
+        agency = "<b>Agency: </b><a href='" + singleLaunch.rocket.agencies[0].infoURL + "' target='_blank'>" + singleLaunch.rocket.agencies[0].name + "</a>";
     };
 
     $("#note").html( //Info Window
         "<div class='infoContent'> <h2>Rocket: " + singleLaunch.rocket.name + "</h2><p>" +
         "<b>Launch Date and Time: </b>" + singleLaunch.net + "<br>" +
         "<b>Launch Location: </b>" + singleLaunch.location.name + "<br>" +
-        mission + "<br>" +
         agency + "<br>" +
+        mission + "<br>" +
         "<b>Live Stream: </b>"+ streamURL + "<br><br>" +
         "<a href='" + singleLaunch.rocket.wikiURL + "' target='_blank'>" + "Learn More About This Rocket" + "</a>" +"<br>" +
         "<a href='" + singleLaunch.location.pads[0].mapURL + "' target='_blank'>" + "Map Location" + "</a>" + "<br>" +
