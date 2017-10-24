@@ -10,6 +10,10 @@ Make infowindow full width with the close button exactly like the nav close
 */
 
 @media screen and (max-width: 980px) {
+
+body{
+  overflow-y: hidden;
+}
  /*START SCREEN -----------------------------------------------------------*/
 
   .earthImg{
@@ -167,7 +171,7 @@ Make infowindow full width with the close button exactly like the nav close
     margin:0px;
   }
 
-
+/*get the label down, and only display it when nav is closed*/
 
 
 
