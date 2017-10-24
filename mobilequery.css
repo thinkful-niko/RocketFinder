@@ -31,7 +31,7 @@ footer p {
 }
 
 .moveDown{
-  -webkit-animation: moveCreditsAnim 0.5s 0.7s;
+  -webkit-animation: moveCreditsAnim 0.05s 0.0s;
   -webkit-animation-fill-mode:forwards;
 }
 
