@@ -245,7 +245,7 @@ footer p {
 
   #note.close{
     -webkit-transform: translateX(100vw);
-    -webkit-animation: slidUp 1.6s 0.0s 1 ease forwards;
+    -webkit-animation: slideUp 1.6s 0.0s 1 ease forwards;
   }
 
 
