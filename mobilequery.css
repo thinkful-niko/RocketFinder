@@ -159,7 +159,8 @@ Make infowindow full width with the close button exactly like the nav close
   nav{
     width: 100vw;
     top: 10.7vh;
-    margin: 0 0 0 -100vw; 
+    margin: 0 0 0 -100vw;
+    height: 69vh; 
   }
 
   input[type="checkbox"]:checked ~ nav{ /*Slide action*/
