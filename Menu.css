@@ -102,6 +102,7 @@ nav p{
   margin-bottom: -0.1px;
 }
 
+
 nav p:nth-child(n+3){
   font-size: 0.8em;
 }
