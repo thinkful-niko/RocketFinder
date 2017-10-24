@@ -145,7 +145,7 @@ section{ /*This avoids the invisible section from blocking the hover*/
 input[type="checkbox"]{
     display:none;
 }
-input[type="checkbox"]:checked ~ nav{ /*Slide action*/
+input[type="checkbox"]:checked ~ nav{ /*Slide action when it is checked*/
     margin:0;
 }
 input[type="checkbox"]:checked ~ label{

@@ -96,7 +96,7 @@ $("input.sliderControl").on("change", (e) => { //once the slider (input) changes
     if (mq.matches) { // media query
         setTimeout(function(){
             $(".controller h2").addClass("displayNone");
-        }, 1200);
+        }, 200);
     }
 
 
@@ -327,6 +327,7 @@ $("#earth_div").click(function() {
         }, 3500);
 
 })
+
 
 
 // Close button, top popup

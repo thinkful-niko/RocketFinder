@@ -17,7 +17,6 @@ body{
 }
 
 footer{
-  bottom: 0vh;
   height: 6.5vh;
 }
 footer p {
@@ -116,6 +115,11 @@ footer p {
   }
 }
 
+.moveUp{
+  -webkit-animation: moveRange 0.5s 0.7s;
+  -webkit-animation-fill-mode:forwards;
+}
+
 
   input[type=range] {
     -webkit-appearance: none; 
@@ -184,9 +188,16 @@ footer p {
   }
 
 /*get the label down, and only display it when nav is closed*/
+  label{
+    top: 40vh;
+  }
 
-
-
+  input[type="checkbox"]:checked ~ label{
+    margin-left: -50vw;
+  }
+  input[type="checkbox"]:checked ~ label img{
+    transform: rotate(0deg);
+  }
 
 
 
