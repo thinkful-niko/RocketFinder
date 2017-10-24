@@ -18,9 +18,21 @@ body{
 
 footer{
   height: 6.5vh;
+  bottom: 10vh;
 }
 footer p {
   margin-top: 1.5vh;
+}
+
+@-webkit-keyframes moveCreditsAnim{
+    0%{bottom: 10vh;}
+    100%{bottom: 0vh;}
+
+}
+
+.moveDown{
+  -webkit-animation: moveCreditsAnim 0.5s 0.7s;
+  -webkit-animation-fill-mode:forwards;
 }
 
 
@@ -166,7 +178,7 @@ footer p {
   .logo{
     width: auto;
     height: 5vh;
-    bottom: 10vh;
+    bottom: 18vh;
   }
 
   /*Logo ----------------------------------------------------------------------------------------*/

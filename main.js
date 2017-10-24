@@ -96,6 +96,7 @@ $("input.sliderControl").on("change", (e) => { //once the slider (input) changes
     if (mq.matches) { // media query
         setTimeout(function(){
             $(".controller h2").addClass("displayNone");
+            $("footer").addClass("moveDown");
         }, 200);
     }
 
@@ -109,6 +110,7 @@ $("input.sliderControl").on("change", (e) => { //once the slider (input) changes
     
     $(".controller").addClass("moveUp"); // Animates range input
     $("input[type=range]").addClass("shrink");
+
     
     markers = [];
 
