@@ -170,11 +170,10 @@ $("#launchList").on("click", "li", function(e) {
         $('input#navigation').attr('checked', false);
     }
 
-    if (mq.matches) {
+    if (mq.matches) { // Remove label after clicking on li item (and restore after 3 seconds), so user cant open list together with infoWindow on mobile.
         $('input#navigation+label').addClass('displayNone');
 
         setTimeout(function(){
-
             if ($('input#navigation+label').hasClass('displayNone'))
             {
                 $('input#navigation+label').removeClass('displayNone');

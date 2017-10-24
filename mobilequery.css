@@ -243,6 +243,11 @@ footer p {
     -webkit-animation: slideDown 1.6s 1.7s 1 ease forwards;
   } 
 
+  #note.close{
+    -webkit-transform: translateX(100vw);
+    -webkit-animation: slidUp 1.6s 0.0s 1 ease forwards;
+  }
+
 
   .infoContent{
     width: 100vw;
