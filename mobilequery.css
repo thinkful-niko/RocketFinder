@@ -248,6 +248,10 @@ footer p {
     width: 100vw;
   }
 
+  .infoContent>p{
+    font-size: 0.8em;
+  }
+
   #closeWindow{
     padding: 0vh 4vw;
     margin-left: 10px;
