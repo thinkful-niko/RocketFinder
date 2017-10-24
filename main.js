@@ -55,12 +55,11 @@ function displayMarkers(data, first) { //gets data (JSON) from getData function 
             $("#launchList").append(
                 "<li class='jsLaunch" + " " + "sideBarItem'" + "><a href='#'><b>" // I'm adding two classes in case I want to do live update of the list, "sideBarItem" is reserved for styling.
                 +
-                item.name + "</b><br>" +
-                item.net + "<br>" +
-                item.location.name + "<br>"
+                "<p>" + item.rocket.name + "</b>" + "</p>" +
+                "<p>" +item.net + "</p>" +
+                "<p>" +item.location.name + "</p>" +
                 // + "<a href='" + item.rocket.wikiURL + "' target='_blank'>" + "About Rocket" + "</a>" +"<br>" 
                 // + "<a href='" + item.location.pads[0].mapURL + "' target='_blank'>" + "Map" + "</a>" + "<br>" 
-                +
                 "</a></li>" //End
 
 
@@ -257,27 +256,27 @@ $("#launchList").on("click", "li", function(e) {
 
     let mission;
     if (singleLaunch.missions.length == 0) {
-        mission = "<b>Mission:</b> Unknown";
+        mission = "<p><b>Mission:</b> Unknown";
     } else {
-        mission = "<b>Mission Name: </b>" + singleLaunch.missions[0].name + "<br><b>Mission Type: </b>" +  singleLaunch.missions[0].typeName;
+        mission = "<p><b>Mission Name: </b>" + singleLaunch.missions[0].name + "</p><p><b>Mission Type: </b>" +  singleLaunch.missions[0].typeName;
     };
 
     let agency;
     if (singleLaunch.rocket.agencies == 0) {
-        agency = "<b>Agency:</b> Unknown";
+        agency = "<p><b>Agency:</b> Unknown";
     } else {
-        agency = "<b>Agency: </b><a href='" + singleLaunch.rocket.agencies[0].infoURL + "' target='_blank'>" + singleLaunch.rocket.agencies[0].name + "</a>";
+        agency = "<p><b>Agency: </b><a href='" + singleLaunch.rocket.agencies[0].infoURL + "' target='_blank'>" + singleLaunch.rocket.agencies[0].name + "</a>";
     };
 
     $("#note").html( //Info Window
-        "<div class='infoContent'> <h2>Rocket: " + singleLaunch.rocket.name + "</h2><p>" +
-        "<b>Launch Date and Time: </b>" + singleLaunch.net + "<br>" +
-        "<b>Launch Location: </b>" + singleLaunch.location.name + "<br>" +
-        agency + "<br>" +
-        mission + "<br>" +
-        "<b>Live Stream: </b>"+ streamURL + "<br><br>" +
-        "<a href='" + singleLaunch.rocket.wikiURL + "' target='_blank'>" + "Learn More About This Rocket" + "</a>" +"<br>" +
-        "<a href='" + singleLaunch.location.pads[0].mapURL + "' target='_blank'>" + "Map Location" + "</a>" + "<br>" +
+        "<div class='infoContent'> <h2>Rocket: " + singleLaunch.rocket.name + "</h2>" +
+        "<p><b>Launch Date and Time: </b>" + singleLaunch.net  + "</p>" +
+        "<p><b>Launch Location: </b>" + singleLaunch.location.name + "</p>" +
+        agency  + "</p>" +
+        mission  + "</p>" +
+        "<p><b>Live Stream: </b>"+ streamURL + "</p>" +
+        "<p><a href='" + singleLaunch.rocket.wikiURL + "' target='_blank'>" + "Learn More About This Rocket" + "</a></p>" +
+        "<p><a href='" + singleLaunch.location.pads[0].mapURL + "' target='_blank'>" + "Map Location" + "</a></p>" +
         "</p></div> <span id='closeWindow'>X</span>");
 
     // INFO WINDOW SLIDING ANIMATION WITH CSS KEYFRAMES CLASSES

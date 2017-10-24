@@ -90,11 +90,23 @@ nav a{
     font-size: 1em;
     font-family:'Titillium Web', 'Helvetica Neue', 'Helvetica', sans-serif;    text-decoration:none;
     display:block;
-    padding:1.23vh 0.78vw;
+    padding:1.73vh 0.98vw;
     font-weight:300;
     letter-spacing:2px;
-    border-bottom:1px solid #333;
+    border-bottom:1px solid #ccc;
+/*    padding:1.23vh 0.78vw;*/
 }
+nav p{
+  color:#fff;
+  line-height: 17px;
+  margin-bottom: -0.1px;
+}
+
+nav p:nth-child(n+3){
+  font-size: 0.8em;
+}
+
+
 nav li:hover{ /*Buggy*/
 /*    -ms-transform: translate(30px, 0px);
     -o-transform: translate(30px, 0px);
@@ -284,8 +296,14 @@ input[type="checkbox"]:checked ~ section{
   top: 6vh;
 }
 
+.infoContent>p{
+  line-height: 1em;
+  margin-bottom: -0.5px;
+}
+
 .infoContent>p,.infoContent>h2 {
   margin-left: 1.56vw;
+  padding: 5px;
 }
 
 #closeWindow{
