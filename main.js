@@ -169,6 +169,19 @@ $("#launchList").on("click", "li", function(e) {
     if (mq.matches) { // closes nav when clicked (MOBILE ONLY)
         $('input#navigation').attr('checked', false);
     }
+
+    if (mq.matches) {
+        $('input#navigation+label').addClass('displayNone');
+
+        setTimeout(function(){
+
+            if ($('input#navigation+label').hasClass('displayNone'))
+            {
+                $('input#navigation+label').removeClass('displayNone');
+            }
+        },3000);
+
+    }
     
     markers = []; // set markers array to empty
 
