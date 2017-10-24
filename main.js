@@ -258,7 +258,7 @@ $("#launchList").on("click", "li", function(e) {
     };
 
     $("#note").html( //Info Window
-        "<div class='infoContent'> <h2>" + singleLaunch.rocket.name + "</h2><p>" +
+        "<div class='infoContent'> <h2>Rocket: " + singleLaunch.rocket.name + "</h2><p>" +
         "<b>Launch Date and Time: </b>" + singleLaunch.net + "<br>" +
         "<b>Launch Location: </b>" + singleLaunch.location.name + "<br>" +
         mission + "<br>" +
