@@ -29,6 +29,7 @@ footer p {
   .earthImg{
     height: 40vh;
     width: 200vw;
+    overflow-x: hidden;
   }
 
   #startScreen>h1{
