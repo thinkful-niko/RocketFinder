@@ -11,6 +11,6 @@ The users are able to browse through the missions, visualize their location on a
 ### What it looks like:
 ![ScreenShot](Mockup/Screenshots/SSinside.jpg)
 
-You can access the live version of this project [here](https://devtrader.github.io/APIHack/).
+You can access the live version of this project [here](https://devtrader.github.io/RocketFinder/).
 
 
